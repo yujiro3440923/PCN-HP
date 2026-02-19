@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Support Tool | PCN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', "sans-serif"],
+                        mincho: ['"Shippori Mincho"', "serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-red-50/30 text-slate-800 antialiased selection:bg-red-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl shadow-sm py-4">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <div
+                    class="w-10 h-10 rounded-sm bg-slate-900 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                    <span class="font-mincho font-bold text-xl text-white">P</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-mincho text-lg font-bold tracking-widest leading-none text-slate-900">PCN</span>
+                    <span class="text-[9px] font-bold uppercase tracking-wider mt-1 text-slate-500">Para Connection
+                        Network</span>
+                </div>
+            </a>
+            <a href="https://help-card-app.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="px-6 py-2 rounded-full bg-red-500 text-white text-sm font-bold shadow-lg hover:bg-red-600 transition-all hover:-translate-y-1 animate-pulse">
+                緊急カードを表示
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-6 md:px-12 max-w-4xl">
+
+            <!-- Title -->
+            <div class="mb-16">
+                <span class="text-red-500 font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Emergency / NFC / QR
+                    Aid</span>
+                <h1 class="font-mincho text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+                    緊急時サポートツール<br>
+                    <span class="text-2xl md:text-3xl text-slate-400 font-sans font-light mt-2 block">使い方ガイド</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed font-light">
+                    災害・事故・パニックなどで、本人が長い説明をできない状況でも<br class="hidden md:inline">
+                    <strong class="text-red-500 font-bold">「必要情報を一瞬で伝え」「周囲が次の行動を迷わない」</strong>ようにするためのツールです。
+                </p>
+            </div>
+
+            <!-- Feature Image Placeholder -->
+            <div class="rounded-2xl overflow-hidden shadow-2xl mb-20 relative">
+                <img src="./images/5.jpg" alt="Emergency Tool Interface" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-red-900/10 pointer-events-none"></div>
+            </div>
+
+            <!-- Section: Objectives -->
+            <section class="mb-20">
+                <h2 class="font-mincho text-2xl font-bold text-slate-900 mb-8 flex items-center gap-4">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm">1</span>
+                    想定される導線（最重要）
+                </h2>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-red-500 flex flex-col md:flex-row items-center gap-8">
+                    <div class="text-center md:text-left flex-1">
+                        <h3 class="font-bold text-xl mb-2">NFCタグにかざす / QRを読み取る</h3>
+                        <div class="flex justify-center md:justify-start my-4 text-red-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl text-red-600">“緊急画面”が即表示</h3>
+                        <p class="text-sm text-slate-500 mt-2">※ログイン不要で、最初の10秒で情報を伝達します。</p>
+                    </div>
+                    <div class="md:w-1/3 w-full bg-slate-100 rounded-xl p-4 text-center">
+                        <span class="text-xs font-bold text-slate-400 block mb-2">イメージ</span>
+                        <div
+                            class="w-16 h-16 bg-slate-800 rounded-full mx-auto flex items-center justify-center text-white mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M6 10V5c0-1.7 1.3-3 3-3h1" />
+                                <path d="M14.5 2C16.4 2 18 3.6 18 5.5V10" />
+                                <path d="M6 10v9a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-9" />
+                                <path d="M12 12v3" />
+                            </svg>
+                        </div>
+                        <p class="font-bold text-slate-700">スマホをかざすだけ</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Screen Composition -->
+            <section class="mb-20">
+                <h2 class="font-mincho text-2xl font-bold text-slate-900 mb-8 flex items-center gap-4">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm">2</span>
+                    画面構成と機能
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- A. Top -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <h3 class="text-lg font-bold text-red-600 mb-3 flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-red-100 text-red-600 text-xs flex items-center justify-center">A</span>
+                            緊急トップ画面
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-4">最初の10秒を勝ちに行くための最重要画面です。</p>
+                        <ul class="list-none text-sm space-y-2 text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div>助けを呼ぶボタン（110/119）
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div>近くの人に見せる（表示最大化）
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div>登録連絡先への緊急通知
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- B. Info Card -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <h3 class="text-lg font-bold text-red-600 mb-3 flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-red-100 text-red-600 text-xs flex items-center justify-center">B</span>
+                            “見せる情報”カード
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-4">周囲の人が上から読むだけで、適切な対応が可能になります。</p>
+                        <ul class="list-none text-sm space-y-2 text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div><strong>苦手・NGな対応</strong>（例：大声）
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div><strong>有効な対応</strong>（例：筆談）
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400"></div>医療情報・アレルギー
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- C. Location -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <h3 class="text-lg font-bold text-red-600 mb-3 flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-red-100 text-red-600 text-xs flex items-center justify-center">C</span>
+                            現在地共有
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-2">位置情報を許可できる場合は地図リンクを生成。</p>
+                        <p class="text-sm text-slate-600">難しい場合は「私はここにいます」画面を表示し、周囲の人に現在地を入力してもらうことも可能です。</p>
+                    </div>
+
+                    <!-- D. Action Guide -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <h3 class="text-lg font-bold text-red-600 mb-3 flex items-center gap-2">
+                            <span
+                                class="w-6 h-6 rounded-full bg-red-100 text-red-600 text-xs flex items-center justify-center">D</span>
+                            行動ガイド
+                        </h3>
+                        <p class="text-sm text-slate-600 mb-2">周囲が迷わないためのステップを表示します。</p>
+                        <div class="bg-slate-50 p-2 rounded text-xs text-slate-500 font-mono">
+                            1. まず安全な場所へ誘導<br>
+                            2. 本人のスマホで家族へ連絡<br>
+                            3. 救急車を呼ぶ判断
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Preparation -->
+            <section class="mb-20">
+                <h2 class="font-mincho text-2xl font-bold text-slate-900 mb-8 flex items-center gap-4">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm">3</span>
+                    事前準備・運用のコツ
+                </h2>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-slate-300 pl-4">
+                        <h4 class="font-bold text-slate-800">情報は「二層」で管理</h4>
+                        <p class="text-sm text-slate-600 mt-1">
+                            誰でも見られる「公開情報（配慮事項など）」と、PINコード等が必要な「限定情報（詳細な病歴・住所など）」を分けるのが現実的かつ安全です。</p>
+                    </div>
+                    <div class="border-l-4 border-slate-300 pl-4">
+                        <h4 class="font-bold text-slate-800">“見せるだけで成立する”設計</h4>
+                        <p class="text-sm text-slate-600 mt-1">
+                            通知機能や位置情報は電波状況や端末設定に依存します。最悪の場合でも画面を見せるだけで支援を受けられるよう、テキスト情報を充実させましょう。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <a href="https://help-card-app.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    アプリを利用・登録する
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                </a>
+                <p class="mt-6 text-slate-500 text-sm">※ 平常時にご家族・支援者の方と一緒に登録することをお勧めします</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm font-light">
+        <p>&copy; PCN - Para Connection Network</p>
+    </footer>
+
+</body>
+
+</html>
