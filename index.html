@@ -265,6 +265,7 @@
         email: "",
         message: "",
       });
+      const [formStatus, setFormStatus] = useState("idle"); // idle | sending | success | error
 
       useEffect(() => {
         const handleScroll = () => {
@@ -290,19 +291,33 @@
         setFormData((prev) => ({ ...prev, [name]: value }));
       };
 
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        const destination = "d095rbu@yamaguchi-u.ac.jp";
-        const subject = `【PCN連携相談】${formData.name}様より`;
-        const body = `
-お名前: ${formData.name}
-ご所属: ${formData.org}
-メール: ${formData.email}
-
-ご相談内容:
-${formData.message}
-        `;
-        window.location.href = `mailto:${destination}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        setFormStatus("sending");
+        try {
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              access_key: "ff2027b1-1ea5-4c59-9106-ef3c47e3a4c3",
+              subject: `【PCN連携相談】${formData.name}様より`,
+              from_name: formData.name,
+              name: formData.name,
+              org: formData.org,
+              email: formData.email,
+              message: formData.message,
+            }),
+          });
+          const data = await res.json();
+          if (data.success) {
+            setFormStatus("success");
+            setFormData({ name: "", org: "", email: "", message: "" });
+          } else {
+            setFormStatus("error");
+          }
+        } catch (err) {
+          setFormStatus("error");
+        }
       };
 
       return (
@@ -973,14 +988,28 @@ ${formData.message}
                     </div>
 
                     <div className="pt-8 text-center">
-                      <button
-                        type="submit"
-                        className="w-full md:w-auto md:px-20 bg-slate-900 hover:bg-slate-800 text-white font-bold py-5 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-3 text-lg mx-auto"
-                      >
-                        <HeartHandshake />
-                        連携を相談する
-                      </button>
-                      <p className="text-xs text-slate-400 mt-6">※メーラーが起動します。内容を確認して送信してください。</p>
+                      {formStatus === "success" ? (
+                        <div className="bg-teal-50 border border-teal-200 rounded-2xl p-8">
+                          <p className="text-teal-700 font-bold text-lg mb-2">✓ 送信完了しました！</p>
+                          <p className="text-teal-600 text-sm">ご相談ありがとうございます。折り返しご連絡いたします。</p>
+                        </div>
+                      ) : (
+                        <>
+                          <button
+                            type="submit"
+                            disabled={formStatus === "sending"}
+                            className={`w-full md:w-auto md:px-20 text-white font-bold py-5 rounded-full shadow-xl transition-all duration-300 flex justify-center items-center gap-3 text-lg mx-auto ${formStatus === "sending" ? "bg-slate-400 cursor-not-allowed" : "bg-slate-900 hover:bg-slate-800 hover:shadow-2xl hover:-translate-y-1"
+                              }`}
+                          >
+                            <HeartHandshake />
+                            {formStatus === "sending" ? "送信中..." : "連携を相談する"}
+                          </button>
+                          {formStatus === "error" && (
+                            <p className="text-red-500 text-sm mt-4 font-bold">送信に失敗しました。もう一度お試しください。</p>
+                          )}
+                          <p className="text-xs text-slate-400 mt-6">※ フォーム送信後、d095rbu@yamaguchi-u.ac.jp へ自動送信されます。</p>
+                        </>
+                      )}
                     </div>
                   </form>
                 </div>
