@@ -340,16 +340,16 @@
                 </div>
                 <div className="flex flex-col">
                   <span
-                    className={`font-mincho text-xl font-bold tracking-widest transition-colors duration-500 leading-none ${scrolled ? "text-slate-900" : "text-white mix-blend-difference"
-                      }`}
-                  >
-                    PCN
-                  </span>
-                  <span
-                    className={`text-[10px] font-bold uppercase tracking-wider mt-1 transition-colors duration-500 ${scrolled ? "text-slate-500" : "text-slate-300"
+                    className={`font-sans text-sm md:text-base font-bold tracking-widest transition-colors duration-500 leading-none ${scrolled ? "text-slate-900" : "text-white mix-blend-difference"
                       }`}
                   >
                     Para Connection Network
+                  </span>
+                  <span
+                    className={`font-mincho text-[10px] font-bold uppercase tracking-wider mt-1 transition-colors duration-500 ${scrolled ? "text-slate-500" : "text-slate-300"
+                      }`}
+                  >
+                    PCN
                   </span>
                 </div>
               </div>
@@ -422,7 +422,7 @@
                 <RevealText delay={100} className="mb-8">
                   <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em]">
                     <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-                    Para Connection Network
+                    Para Connection Network <span className="opacity-70 text-[10px]">PCN</span>
                   </div>
                 </RevealText>
 
@@ -452,10 +452,12 @@
                     </button>
                     <button
                       onClick={() => scrollToSection("practice")}
-                      className="group bg-transparent hover:bg-white/10 text-white border border-white/30 px-10 py-5 rounded-full font-bold text-lg backdrop-blur-md transition-all duration-300 flex items-center justify-center gap-2"
+                      className="group text-white font-bold text-lg flex items-center justify-center gap-3 transition-all duration-300 px-6 py-4"
                     >
-                      実績を見る
-                      <ChevronDown size={20} className="group-hover:translate-y-1 transition-transform" />
+                      <span className="border-b-2 border-white/50 pb-1 group-hover:border-white group-hover:text-teal-300 transition-colors duration-300">
+                        実績を見る
+                      </span>
+                      <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform duration-300 group-hover:text-teal-300" />
                     </button>
                   </div>
                 </RevealText>
@@ -498,25 +500,25 @@
                 {[
                   {
                     icon: Users,
-                    title: "Design",
+                    title: "USER CENTRIC",
                     desc: "私たちは「優しさ」ではなく「ズレが起きにくい仕組み」を設計します。当事者・支援者・周囲の人が同じ景色を見られるように、観察・対話・検証を重ね、誤解と摩擦を減らすデザインへ。",
-                    sub: "User Centric",
-                    img: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop",
+                    sub: "Design",
+                    img: "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=800&auto=format&fit=crop",
                     href: "design.html",
                   },
                   {
                     icon: Cpu,
-                    title: "Technology",
+                    title: "APPROPRIATE TECH",
                     desc: "\"伝わらない\"を、データとツールでほどく。記録・可視化・AI支援を使って、個別ケースの理解と組織全体の傾向把握を両立。現場で使える形に落とし込みます。",
-                    sub: "Appropriate Tech",
+                    sub: "Technology",
                     img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
                     href: "technology.html",
                   },
                   {
                     icon: Activity,
-                    title: "Action",
+                    title: "RAPID PROTOTYPING",
                     desc: "机上で終わらせず、現場で確かめ、改善し続ける。試作→小さく実装→フィードバック→改良の循環で、実際に役立つ状態まで持っていきます。",
-                    sub: "Rapid Prototyping",
+                    sub: "Action",
                     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
                     href: "action.html",
                   },
@@ -566,13 +568,13 @@
             <div className="container mx-auto px-6 md:px-12 relative z-10">
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 <RevealText delay={100}>
-                  <div className="relative aspect-[3/4] md:aspect-square rounded-2xl flex items-center justify-center">
-                    <div className="absolute inset-0 bg-slate-50 opacity-50 z-0"></div>
+                  <div className="relative aspect-[4/3] md:aspect-square rounded-3xl overflow-hidden shadow-2xl group">
                     <img
-                      src="/images/2.jpg"
-                      alt="Representative Puzzle"
-                      className="w-full h-auto object-cover transition-transform duration-700 hover:scale-105"
+                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                      alt="Team Collaboration"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                     />
+                    <div className="absolute inset-0 bg-teal-900/10 mix-blend-multiply"></div>
                   </div>
                 </RevealText>
 
@@ -688,13 +690,15 @@
                 {/* 1. Communication Board (New No.1) */}
                 <div className="group grid lg:grid-cols-12 gap-10 items-center">
                   <div className="lg:col-span-7 relative rounded-2xl shadow-2xl overflow-hidden h-[500px]">
-                    <ParallaxImage
-                      src="./images/4.jpg"
-                      alt="Communication Board"
-                      speed={0.05}
-                      className="w-full h-full"
-                    />
-                    <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-colors duration-500"></div>
+                    <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
+                      <ParallaxImage
+                        src="./images/4.jpg"
+                        alt="Communication Board"
+                        speed={0.05}
+                        className="w-full h-full contrast-125 saturate-50 brightness-90"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-transparent group-hover:bg-slate-900/40 transition-colors duration-700 pointer-events-none"></div>
                     <div className="absolute bottom-8 left-8">
                       <span className="bg-white/90 backdrop-blur text-slate-900 px-4 py-2 rounded-full font-bold text-xs tracking-wider">
                         AAC / ACCESSIBILITY
@@ -704,7 +708,7 @@
 
                   <div className="lg:col-span-5">
                     <RevealText>
-                      <div className="text-9xl font-mincho text-slate-200 font-bold mb-[-3rem] -translate-x-4 relative z-0 opacity-50">01</div>
+                      <div className="text-8xl md:text-9xl font-mincho text-slate-200 font-bold mb-[-2rem] md:mb-[-3rem] relative z-0 opacity-30 ml-2">01</div>
                     </RevealText>
                     <div className="relative z-10 pl-4">
                       <RevealText delay={200}>
@@ -750,7 +754,7 @@
                 <div className="group grid lg:grid-cols-12 gap-10 items-center">
                   <div className="lg:col-span-5 lg:order-1 order-2">
                     <RevealText>
-                      <div className="text-9xl font-mincho text-slate-200 font-bold mb-[-3rem] -translate-x-4 relative z-0 opacity-50">02</div>
+                      <div className="text-8xl md:text-9xl font-mincho text-slate-200 font-bold mb-[-2rem] md:mb-[-3rem] relative z-0 opacity-30 ml-2">02</div>
                     </RevealText>
                     <div className="relative z-10 pl-4">
                       <RevealText delay={200}>
@@ -793,8 +797,10 @@
                   </div>
 
                   <div className="lg:col-span-7 lg:order-2 order-1 relative rounded-2xl shadow-2xl overflow-hidden h-[500px]">
-                    <ParallaxImage src="./images/5.jpg" alt="Mobile Support" speed={0.05} className="w-full h-full" />
-                    <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-colors duration-500"></div>
+                    <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
+                      <ParallaxImage src="./images/5.jpg" alt="Mobile Support" speed={0.05} className="w-full h-full contrast-125 saturate-50 brightness-90" />
+                    </div>
+                    <div className="absolute inset-0 bg-transparent group-hover:bg-slate-900/40 transition-colors duration-700 pointer-events-none"></div>
                     <div className="absolute bottom-8 left-8">
                       <span className="bg-white/90 backdrop-blur text-slate-900 px-4 py-2 rounded-full font-bold text-xs tracking-wider">
                         SMART SUPPORT / MOBILE
@@ -806,8 +812,10 @@
                 {/* 3. My Museum (Old No.1 -> New No.3) */}
                 <div className="group grid lg:grid-cols-12 gap-10 items-center">
                   <div className="lg:col-span-7 relative rounded-2xl shadow-2xl overflow-hidden h-[500px]">
-                    <ParallaxImage src="./images/3.jpg" alt="Museum Archive" speed={0.05} className="w-full h-full" />
-                    <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-colors duration-500"></div>
+                    <div className="w-full h-full group-hover:scale-105 transition-transform duration-700">
+                      <ParallaxImage src="./images/3.jpg" alt="Museum Archive" speed={0.05} className="w-full h-full contrast-125 saturate-50 brightness-90" />
+                    </div>
+                    <div className="absolute inset-0 bg-transparent group-hover:bg-slate-900/40 transition-colors duration-700 pointer-events-none"></div>
                     <div className="absolute bottom-8 left-8">
                       <span className="bg-white/90 backdrop-blur text-slate-900 px-4 py-2 rounded-full font-bold text-xs tracking-wider">
                         WEB ARCHIVE / IDENTITY
@@ -816,7 +824,7 @@
                   </div>
                   <div className="lg:col-span-5">
                     <RevealText>
-                      <div className="text-9xl font-mincho text-slate-200 font-bold mb-[-3rem] -translate-x-4 relative z-0 opacity-50">03</div>
+                      <div className="text-8xl md:text-9xl font-mincho text-slate-200 font-bold mb-[-2rem] md:mb-[-3rem] relative z-0 opacity-30 ml-2">03</div>
                     </RevealText>
                     <div className="relative z-10 pl-4">
                       <RevealText delay={200}>
@@ -864,27 +872,17 @@
           </section>
 
           {/* 4. Capabilities (New No.4) */}
-          <section id="capabilities" className="py-32 bg-slate-900 text-white relative overflow-hidden">
-            {/* 背景 */}
-            <div className="absolute inset-0 opacity-10">
-              <img
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
-                className="w-full h-full object-cover grayscale"
-                alt="Tech Background"
-              />
-            </div>
-            <div className="absolute inset-0 bg-slate-900/60"></div>
-
+          <section id="capabilities" className="py-32 bg-slate-50 text-slate-800 relative overflow-hidden">
             <div className="container mx-auto px-6 md:px-12 relative z-10">
               <div className="text-center mb-24">
                 <RevealText>
-                  <span className="text-teal-400 font-bold tracking-[0.3em] text-xs uppercase mb-6 block">Capabilities</span>
+                  <span className="text-teal-600 font-bold tracking-[0.3em] text-xs uppercase mb-6 block">Capabilities</span>
                 </RevealText>
                 <RevealText delay={200}>
-                  <h2 className="font-mincho text-4xl md:text-5xl font-bold mb-8">私たちができること</h2>
+                  <h2 className="font-mincho text-4xl md:text-5xl font-bold mb-8 text-slate-900">私たちができること</h2>
                 </RevealText>
                 <RevealText delay={300}>
-                  <p className="text-slate-300 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+                  <p className="text-slate-600 max-w-2xl mx-auto text-lg font-light leading-relaxed">
                     プロジェクトのフェーズに合わせ、課題の言語化から実装、検証まで伴走します。
                   </p>
                 </RevealText>
@@ -900,14 +898,14 @@
                   "活動のアーカイブ・発信",
                 ].map((item, idx) => (
                   <RevealText key={idx} delay={idx * 100} className="h-full">
-                    <div className="h-full bg-white/5 border border-white/10 p-10 rounded-xl hover:bg-white/10 hover:border-teal-500/50 transition-all duration-500 backdrop-blur-sm cursor-default flex flex-col justify-between group">
+                    <div className="h-full bg-white border border-slate-100 p-10 rounded-xl shadow-sm hover:shadow-lg hover:border-teal-200 transition-all duration-500 cursor-default flex flex-col justify-between group">
                       <div>
-                        <div className="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-6 text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-colors duration-500">
+                        <div className="w-12 h-12 bg-teal-50 rounded-lg flex items-center justify-center mb-6 text-teal-600 group-hover:bg-teal-500 group-hover:text-white transition-colors duration-500">
                           <Target size={24} />
                         </div>
-                        <h3 className="font-mincho text-xl font-bold leading-relaxed text-white">{item}</h3>
+                        <h3 className="font-mincho text-xl font-bold leading-relaxed text-slate-900">{item}</h3>
                       </div>
-                      <div className="w-full h-[1px] bg-white/10 mt-10 relative overflow-hidden">
+                      <div className="w-full h-[1px] bg-slate-100 mt-10 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-full bg-teal-500 -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
                       </div>
                     </div>
