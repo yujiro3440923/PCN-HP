@@ -356,10 +356,16 @@
 
               {/* Desktop Nav */}
               <nav className="hidden md:flex items-center gap-12">
-                {["About", "Practice", "Capabilities"].map((item) => (
+                {["About", "Practice", "Capabilities", "News"].map((item) => (
                   <button
                     key={item}
-                    onClick={() => scrollToSection(item.toLowerCase())}
+                    onClick={() => {
+                      if (item === "News") {
+                        window.location.href = "news.html";
+                      } else {
+                        scrollToSection(item.toLowerCase());
+                      }
+                    }}
                     className={`text-sm tracking-widest uppercase font-medium hover:text-teal-500 transition-colors relative group py-1 ${scrolled ? "text-slate-600" : "text-slate-200"
                       }`}
                   >
@@ -400,6 +406,9 @@
               <button onClick={() => scrollToSection("capabilities")} className="font-mincho text-3xl font-bold text-slate-800 hover:text-teal-600 transition-colors">
                 Capabilities
               </button>
+              <a href="news.html" className="font-mincho text-3xl font-bold text-slate-800 hover:text-teal-600 transition-colors">
+                News
+              </a>
               <button onClick={() => scrollToSection("contact")} className="bg-slate-900 text-white px-12 py-5 rounded-full font-bold text-lg mt-8 shadow-2xl">
                 連携相談する
               </button>
@@ -466,6 +475,57 @@
 
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/50 hidden md:block">
               <ChevronDown size={32} />
+            </div>
+          </section>
+
+          {/* News Section (Top) */}
+          <section className="py-24 bg-white relative overflow-hidden">
+            <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-4xl">
+              <div className="flex justify-between items-end mb-12 border-b border-slate-200 pb-4">
+                <RevealText>
+                  <h2 className="font-mincho text-2xl md:text-3xl font-bold text-slate-900">
+                    News <span className="text-base text-slate-500 font-sans font-light ml-4 tracking-wider">お知らせ</span>
+                  </h2>
+                </RevealText>
+                <RevealText delay={200}>
+                  <a href="news.html" className="text-sm font-bold text-teal-600 hover:text-teal-700 flex items-center gap-2 group">
+                    一覧を見る
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </RevealText>
+              </div>
+
+              <div className="flex flex-col gap-6">
+                {/* News Item 1 */}
+                <RevealText delay={300}>
+                  <a href="20260208-presentation.html" className="group block">
+                    <article className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center py-4 rounded-xl transition-all duration-300 hover:bg-slate-50 border border-transparent hover:border-slate-100 hover:shadow-sm px-4 -mx-4">
+                      <div className="flex items-center gap-4 shrink-0 sm:w-48">
+                        <time className="text-slate-500 font-light text-sm">2026.02.08</time>
+                        <span className="text-xs font-bold text-teal-600 tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full">EVENT</span>
+                      </div>
+                      <h3 className="font-bold text-slate-900 text-base md:text-lg group-hover:text-teal-600 transition-colors flex-1">
+                        最終成果発表会に参加しました（資料リンクあり）
+                      </h3>
+                    </article>
+                  </a>
+                </RevealText>
+
+                {/* News Item 2 */}
+                <RevealText delay={400}>
+                  <a href="news-detail.html" className="group block">
+                    <article className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center py-4 rounded-xl transition-all duration-300 hover:bg-slate-50 border border-transparent hover:border-slate-100 hover:shadow-sm px-4 -mx-4">
+                      <div className="flex items-center gap-4 shrink-0 sm:w-48">
+                        <time className="text-slate-500 font-light text-sm">2026.01.31</time>
+                        <span className="text-xs font-bold text-teal-600 tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full">EVENT</span>
+                      </div>
+                      <h3 className="font-bold text-slate-900 text-base md:text-lg group-hover:text-teal-600 transition-colors flex-1">
+                        「日本眼科学会総会」市民公開講座に登壇します
+                      </h3>
+                    </article>
+                  </a>
+                </RevealText>
+              </div>
             </div>
           </section>
 
