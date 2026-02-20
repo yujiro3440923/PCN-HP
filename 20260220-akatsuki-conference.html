@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>本日開催のAKATSUKIカンファレンスにて、ポスターセッションで発表しました。｜PCN（Para Connection Network）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['"Noto Sans JP"', "sans-serif"], mincho: ['"Shippori Mincho"', "serif"] } } } };
+    </script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 antialiased selection:bg-teal-500 selection:text-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl shadow-sm py-4">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <div
+                    class="w-10 h-10 rounded-sm bg-slate-900 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                    <span class="font-mincho font-bold text-xl text-white">P</span>
+                </div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-sans text-sm md:text-base font-bold tracking-widest leading-none text-slate-900">Para
+                        Connection Network</span>
+                    <span
+                        class="font-mincho text-[9px] font-bold uppercase tracking-wider mt-1 text-slate-500">PCN</span>
+                </div>
+            </a>
+            <a href="news.html"
+                class="px-6 py-2 border border-slate-300 rounded-full text-slate-600 text-sm font-bold shadow-sm hover:bg-slate-50 transition-all hover:-translate-y-1 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+                一覧に戻る
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 min-h-screen">
+        <div class="container mx-auto px-6 md:px-12 max-w-3xl">
+            <!-- Breadcrumb -->
+            <nav class="flex text-sm text-slate-500 mb-8 fade-in">
+                <a href="index.html" class="hover:text-teal-600 transition-colors">Home</a>
+                <span class="mx-2">/</span>
+                <a href="news.html" class="hover:text-teal-600 transition-colors">News</a>
+                <span class="mx-2">/</span>
+                <span class="text-slate-800">AKATSUKIカンファレンスにて、ポスターセッションで発表しました。</span>
+            </nav>
+
+            <!-- Title Section -->
+            <div class="mb-12 fade-in">
+                <div class="flex items-center gap-4 mb-4">
+                    <span
+                        class="text-teal-600 font-bold uppercase tracking-wider text-sm border border-teal-200 bg-teal-50 px-3 py-1 rounded-full">EVENT</span>
+                    <time class="text-slate-500 font-light">2026年2月20日</time>
+                </div>
+                <h1 class="font-sans text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-8">
+                    本日開催のAKATSUKIカンファレンスにて、ポスターセッションで発表しました。
+                </h1>
+            </div>
+
+            <!-- Main Image -->
+            <div class="rounded-2xl overflow-hidden shadow-sm mb-12 fade-in">
+                <img src="./images/S__226279457_0.jpg" alt="Cover Image"
+                    class="w-full h-auto object-cover max-h-[500px]">
+            </div>
+
+            <!-- Article Content -->
+            <article class="prose prose-slate prose-lg max-w-none fade-in font-light leading-loose text-slate-700">
+                <p>
+                    本日開催のAKATSUKIカンファレンスにて、ポスターセッションで発表しました。東京での開催ということもあり、会場には多様な分野の実務家・研究者が集まっていて、普段はなかなか出会えない“IT猛者”の皆さんともたくさん交流できました。
+                </p>
+
+                <p>
+                    発表では、取り組みの背景や狙いを共有しつつ、鋭い質問や具体的な改善アイデアも多数いただき、次の検証や実装に向けたヒントが一気に増えた感覚があります。短い時間ながらも密度の濃い学びと刺激を得られた一日でした。
+                </p>
+
+                <p>
+                    関わってくださった皆さま、そして会場でお声がけくださった皆さま、本当にありがとうございました。今後のアップデートも引き続き発信していきます！
+                </p>
+
+            </article>
+
+            <!-- Back to list -->
+            <div class="mt-16 text-center fade-in">
+                <a href="news.html"
+                    class="inline-flex items-center gap-3 bg-white border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white px-10 py-4 rounded-full font-bold transition-all duration-300">
+                    一覧に戻る
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-16 mt-20">
+        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-white rounded-sm flex items-center justify-center"><span
+                        class="font-mincho text-slate-900 font-bold text-sm">P</span></div>
+                <span class="font-mincho text-lg font-bold text-white tracking-widest">PCN</span>
+            </div>
+            <div class="flex flex-wrap gap-8 text-sm font-bold tracking-widest uppercase">
+                <a href="index.html" class="hover:text-white transition-colors">Top</a>
+                <a href="design.html" class="hover:text-white transition-colors">Design</a>
+                <a href="technology.html" class="hover:text-white transition-colors">Technology</a>
+                <a href="action.html" class="hover:text-white transition-colors">Action</a>
+                <a href="news.html" class="hover:text-white transition-colors">News</a>
+            </div>
+            <p class="text-xs text-slate-600">&copy; 2026 Para Connection Network.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
