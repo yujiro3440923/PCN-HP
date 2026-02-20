@@ -394,20 +394,25 @@
 
               {/* Desktop Nav */}
               <nav className="hidden md:flex items-center gap-12">
-                {["About", "Practice", "Capabilities", "News"].map((item) => (
+                {[
+                  { label: "About Us", id: "about" },
+                  { label: "Practice", id: "practice" },
+                  { label: "Capabilities", id: "capabilities" },
+                  { label: "News", id: "news" },
+                ].map((item) => (
                   <button
-                    key={item}
+                    key={item.id}
                     onClick={() => {
-                      if (item === "News") {
+                      if (item.id === "news") {
                         window.location.href = "news.html";
                       } else {
-                        scrollToSection(item.toLowerCase());
+                        scrollToSection(item.id);
                       }
                     }}
                     className={`text-sm tracking-widest uppercase font-medium hover:text-teal-500 transition-colors relative group py-1 ${scrolled ? "text-slate-600" : "text-slate-200"
                       }`}
                   >
-                    {item}
+                    {item.label}
                     <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-teal-500 transition-all duration-500 ease-out group-hover:w-full"></span>
                   </button>
                 ))}
@@ -436,7 +441,7 @@
                 }`}
             >
               <button onClick={() => scrollToSection("about")} className="font-mincho text-3xl font-bold text-slate-800 hover:text-teal-600 transition-colors">
-                About
+                About Us
               </button>
               <button onClick={() => scrollToSection("practice")} className="font-mincho text-3xl font-bold text-slate-800 hover:text-teal-600 transition-colors">
                 Practice
@@ -579,6 +584,7 @@
                   {
                     icon: Users,
                     title: "USER CENTRIC",
+                    jptitle: "関係性と仕組みの設計",
                     desc: "私たちは「優しさ」ではなく「ズレが起きにくい仕組み」を設計します。当事者・支援者・周囲の人が同じ景色を見られるように、観察・対話・検証を重ね、誤解と摩擦を減らすデザインへ。",
                     sub: "Design",
                     img: "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=800&auto=format&fit=crop",
@@ -587,6 +593,7 @@
                   {
                     icon: Cpu,
                     title: "APPROPRIATE TECH",
+                    jptitle: "\"伝わらなさ\"を減らす道具",
                     desc: "\"伝わらない\"を、データとツールでほどく。記録・可視化・AI支援を使って、個別ケースの理解と組織全体の傾向把握を両立。現場で使える形に落とし込みます。",
                     sub: "Technology",
                     img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
@@ -595,6 +602,7 @@
                   {
                     icon: Activity,
                     title: "RAPID PROTOTYPING",
+                    jptitle: "現場で確かめ、改善し続ける",
                     desc: "机上で終わらせず、現場で確かめ、改善し続ける。試作→小さく実装→フィードバック→改良の循環で、実際に役立つ状態まで持っていきます。",
                     sub: "Action",
                     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
@@ -625,7 +633,8 @@
 
                       <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                         <span className="text-xs font-bold text-teal-300 uppercase tracking-[0.2em] mb-3 block">{card.sub}</span>
-                        <h3 className="font-mincho text-3xl font-bold text-white mb-4">{card.title}</h3>
+                        <h3 className="font-mincho text-3xl font-bold text-white mb-2">{card.title}</h3>
+                        <p className="font-sans text-sm font-bold text-white/90 mb-4 tracking-wide">{card.jptitle}</p>
                         <p className="text-slate-300 font-medium leading-relaxed text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                           {card.desc}
                         </p>
